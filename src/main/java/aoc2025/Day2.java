@@ -89,10 +89,8 @@ public class Day2 implements Day {
                 if (isNotDivisibleBy(length, seqLength)) continue;
                 String sequence = stringId.substring(0, seqLength);
                 int repetitions = length / seqLength;
-                String repeatedSequence = new StringBuilder()
-                        .repeat(sequence, repetitions)
-                        .toString();
-                if (stringId.equals(repeatedSequence)) return true;
+                String repeatedSequence = sequence.repeat(repetitions);
+                if (repeatedSequence.equals(stringId)) return true;
             }
             return false;
         }
